@@ -1,3 +1,4 @@
+use serde::{Serialize, Deserialize};
 #[derive(Deserialize, Serialize, Clone, Debug)]
 pub struct Product {
     pub id: i32,

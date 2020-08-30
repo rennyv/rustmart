@@ -3,6 +3,7 @@ use crate::types::{CartProduct, Product};
 use anyhow::Error;
 use yew::format::Json;
 use yew::prelude::*;
+use yew::services::fetch::FetchTask;
 
 
 struct State {
@@ -33,6 +34,8 @@ impl Component for Home {
 
         let cart_products: Vec<CartProduct> = vec![];
 
+        link.send_message(Msg::GetProducts);
+
         Self {
             state: State {
                 products,
@@ -41,6 +44,7 @@ impl Component for Home {
                 get_products_loaded: false,
             },
             link,
+            task: None,
         }
     }
 
