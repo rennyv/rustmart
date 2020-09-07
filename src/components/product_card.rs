@@ -23,7 +23,7 @@ impl Component for ProductCard {
         true
     }
 
-    fn change(&mut self, _msg: Self::Message) -> ShouldRender {
+    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
         true
     }
 
